@@ -1,0 +1,37 @@
+{
+    "name": "markhuot/craft-react",
+    "description": "Use React on the Craft front-end",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin"
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "webonyx/graphql-php": "^0.9.10",
+        "react/http": "^0.7",
+        "anahkiasen/underscore-php": "^2.0",
+        "symfony/serializer": "^3.3",
+        "symfony/property-access": "^3.3"
+    },
+    "authors": [
+        {
+            "name": "Mark Huot",
+            "email": "mark@markhuot.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "markhuot\\CraftReact\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft / React",
+        "handle": "craft-react",
+        "developer": "Mark Huot",
+        "developerUrl": "https://www.github.com/markhuot",
+        "class": "markhuot\\CraftReact\\Plugin"
+    }
+}

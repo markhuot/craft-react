@@ -1,0 +1,21 @@
+version: '2'
+services:
+  fpm:
+    build: ./
+    volumes:
+      - /Users/markhuot/Sites/craft3:/var/www/html
+      - ./fpm/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
+  nginx:
+    image: nginx
+    ports:
+      - 9000:80
+    volumes:
+      - /Users/markhuot/Sites/craft3:/var/www/html
+      - ./nginx/fastcgi.conf:/etc/nginx/fastcgi.conf
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/snippets/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: craftql
